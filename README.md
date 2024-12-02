@@ -21,7 +21,7 @@ Plexi features three key user personas:
 
 ## Technologies Used
 
-- **Frontend**: Web application built using HTML, CSS, and JavaScript.
+- **Frontend**: Web application built using HTML, CSS, JavaScript, and Python
 - **Backend**: Basic server-side logic to support task matching and user interactions.
 - **Database**: A mySQL database is used to store user data, tasks, and platform-related information. 
 
