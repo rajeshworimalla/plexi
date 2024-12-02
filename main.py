@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session, redirect, url_for, jsonify
-from config import update_password,mark_job, get_username_by_userid,update_user_details, delete_app_by_id, delete_job, update_job,get_applications_by_app_id, reject_app,get_job_id_by_app_id, accept_app, get_applications_by_jobid, delete_user_by_id, get_user_by_userid,get_all_users,get_all_applications, switch_role, filter_search_jobs, search_jobs, get_job_by_job_id, update_email, get_chart_data, accepted_applications, pending_applications, total_applications, rejected_applications, reviewed_applications, get_user_info, insert_new_user, check_chat_exists, user_exists, get_chat_window, get_all_jobs, get_applications_by, get_search_results, get_messages, get_job_by_user_id, save_application, post_job_details, get_chat_list, insert_message, create_chat
+from config import update_password,mark_job, get_id_by_name,update_user_details, delete_app_by_id, delete_job, update_job,get_applications_by_app_id, reject_app,get_job_id_by_app_id, accept_app, get_applications_by_jobid, delete_user_by_id, get_user_by_userid,get_all_users,get_all_applications, switch_role, filter_search_jobs, search_jobs, get_job_by_job_id, update_email, get_chart_data, accepted_applications, pending_applications, total_applications, rejected_applications, reviewed_applications, get_user_info, insert_new_user, check_chat_exists, user_exists, get_chat_window, get_all_jobs, get_applications_by, get_search_results, get_messages, get_job_by_user_id, save_application, post_job_details, get_chat_list, insert_message, create_chat
 from datetime import datetime
 from math import ceil
 from config import delete_user_by_email,check_chat_exists,get_user_by_email
@@ -332,10 +332,11 @@ def start_chat():
     if 'user_id' not in session:
         return jsonify({'error': 'Unauthorized'}), 403
 
-    recipient_id = request.form['tosearch']
-    recipient_name = get_username_by_userid(recipient_id)
+    recipient_name = request.form['tosearch']
     recipient = recipient_name.strip()
-    if recipient_name == "Not Found":
+    recipient_id = get_id_by_name(recipient)
+    
+    if recipient_id == "Not Found":
         return redirect(url_for('chats', alert = 'User Not Found'))
     sender_id = session['user_id']
     existing_chat = check_chat_exists(sender_id, recipient_id)

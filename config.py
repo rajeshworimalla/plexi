@@ -650,10 +650,10 @@ def mark_job(job_id):
     cur.close()
     conn.close()
     
-def  get_username_by_userid(user_id):
+def  get_id_by_name(name):
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("""SELECT username FROM users WHERE id=%s""", (user_id,))
+    cur.execute("""SELECT id FROM users WHERE username=%s""", (name,))
     id = cur.fetchall()
     cur.close()
     conn.close()
@@ -661,6 +661,5 @@ def  get_username_by_userid(user_id):
         return id[0][0]
     else:
         return 'Not Found'
-print(get_username_by_userid(98))
     
     
