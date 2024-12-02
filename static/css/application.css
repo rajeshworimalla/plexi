@@ -1,0 +1,156 @@
+.table-container {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* overflow: hidden; */
+    height:auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+th {
+    color: #555;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.company-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.company-logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status.pending {
+    background-color: #e0f4fc;
+    color: #007bff;
+}
+
+.status.on-hold {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.contact-icons a {
+    margin: 0 5px;
+    color: #007bff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.contact-icons a:hover {
+    color: #0056b3;
+}
+
+.application-suggestions-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.application-suggestions-container .app-title {
+    font-size: 16px;
+    color: #888;
+    margin-right: 10px;
+}
+
+.application-suggestions-container .app-tag {
+    padding: 10px 20px;
+    background-color: #f0eaff;
+    color: #5b34eb;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.application-suggestions-container .app-tag:hover {
+    background-color: #d7c7ff;
+}
+
+.application-suggestions-container .app-tag.active {
+    background-color: #5b34eb;
+    color: white;
+}
+
+.actions {
+    position: relative;
+}
+
+.three-dots {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+    color: #007bff;
+}
+
+.three-dots:hover {
+    color: #0056b3;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.dropdown-menu li a:hover {
+    color: #007bff;
+}

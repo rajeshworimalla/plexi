@@ -1,0 +1,240 @@
+/* General Styles */
+
+  .job-create-container {
+    
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .step h2 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .step p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .job-category,
+  .popular-requirements {
+    margin-top: 20px;
+  }
+  
+  .job-category h3,
+  .popular-requirements h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .tag {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px 5px 5px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .tag.selected {
+    background-color: #ffeeba;
+    color: #856404;
+    border-color: #ffeeba;
+  }
+  
+  .tag span {
+    margin-left: 6px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .see-more {
+    color: #007bff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Scope Option Styles */
+  .scope-options label {
+    display: block;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .scope-options p {
+    font-size: 12px;
+    color: #777;
+    margin: 5px 0 0 0;
+  }
+
+  /* Button Container */
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+  }
+  
+  /* General Button Styles */
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  /* Back Button */
+  .back-btn {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ffd700; /* Yellow border */
+  }
+  
+  .back-btn:hover {
+    background-color: #fffbea; /* Light yellow background */
+  }
+  
+  /* Review Job Post Button */
+  .review-btn {
+    background-color: #5c37d7; /* Yellow background */
+    color: #ffffff;
+    border: none;
+  }
+  
+  .review-btn:hover {
+    background-color: #7760c2; /* Darker yellow on hover */
+  }
+  /* Container Styles */
+.salary-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .salary-container h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .salary-container p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* Toggle Buttons */
+  .toggle-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-btn.selected {
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+  }
+  
+  .toggle-btn .icon {
+    font-size: 16px;
+  }
+  
+  /* Salary Range */
+  .salary-range {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .input-group {
+    flex: 1;
+    position: relative;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .input-group .unit {
+    position: absolute;
+    right: 10px;
+    top: 38px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  

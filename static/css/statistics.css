@@ -1,0 +1,321 @@
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2%; /* Relative gap */
+}
+
+/* Stats Cards */
+.stats {
+    display: flex;
+    gap: 2%; /* Relative gap */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2%;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* Use rem for shadows */
+    flex: 1;
+    text-align: center;
+}
+
+.card h4 {
+    font-size: 1rem; /* Use rem for scalable fonts */
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.card h2 {
+    font-size: 1.5rem; /* Relative font size */
+    margin: 0;
+}
+
+.card .progress {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle.purple {
+    background: rgba(128, 0, 128, 0.1);
+    border: 3px solid rgba(128, 0, 128, 0.6);
+}
+
+.circle.green {
+    background: rgba(0, 128, 0, 0.1);
+    border: 3px solid rgba(0, 128, 0, 0.6);
+}
+
+.circle.orange {
+    background: rgba(255, 165, 0, 0.1);
+    border: 3px solid rgba(255, 165, 0, 0.6);
+}
+
+/* Active Jobs & Total Applications */
+.stats-content {
+    display: flex;
+    gap: 2%;
+}
+#barChart {
+    max-width: 100%; /* Set a reasonable maximum width */
+    max-height: 50vh;
+    display: block;
+    box-sizing: border-box;
+}
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+    grid-template-rows: auto auto; /* Rows for the content */
+    gap: 20px; /* Space between rows */
+}
+
+/* total applications */
+.total-applications-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width:85%;
+    height:100%
+    
+  }
+
+  .total-applications-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar span {
+    position: absolute;
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  .progress-bar .applications {
+    
+    background-color: #7e42f5;
+  }
+
+  .progress-bar .shortlisted {
+    
+    background-color: #30bf78;
+    
+  }
+
+  .progress-bar .on-hold {
+    
+    background-color: #ffa726;
+    
+  }
+
+  .progress-bar .rejected {
+    
+    background-color: #f44336;
+    
+  }
+
+  .status-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .status-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .status-list .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .status-list .applications-dot {
+    background-color: #7e42f5;
+  }
+
+  .status-list .shortlisted-dot {
+    background-color: #30bf78;
+  }
+
+  .status-list .on-hold-dot {
+    background-color: #ffa726;
+  }
+
+  .status-list .rejected-dot {
+    background-color: #f44336;
+  }
+
+  .status-list span {
+    font-size: 14px;
+    color: #666;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  
+  .active-jobs-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width */
+    max-width: 70%; /* Max width for larger screens */
+    margin-bottom: 2%; /* Add spacing */
+}
+
+.active-jobs-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.active-jobs-container header h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.active-jobs-container header button {
+    padding: 8px 12px;
+    background-color: #5b34eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.active-jobs-container header button:hover {
+    background-color: #7c57f0;
+}
+
+.job-titles {
+    margin-top: 20px; /* Add spacing between chart and job titles */
+}
+
+.job-titles h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.job-titles ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job-titles ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.job-titles ul li:last-child {
+    border-bottom: none;
+}
+.statistics-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: auto; /* Flexible height */
+    max-width: 100%; /* Scale dynamically */
+  }
+
+  .statistics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .statistics-header h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+
+  .statistics-header i {
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+  }
+
+  .statistics-values {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .statistics-value {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .statistics-value .amount {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .statistics-value .amount.income {
+    color: #30bf78;
+  }
+
+  .statistics-value .amount.expense {
+    color: #f44336;
+  }
+
+  #statisticsChart {
+    max-width: 100%;
+    max-height: 200px; /* Fixed height for the canvas */
+  }
+
+  .inside-stats{
+    display:flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Optional: Add spacing between elements */
+    width: 30%; /* Full width */
+    max-width: 70%; /* Max width for larger screens */
+    height:30%;
+    margin-bottom: 2%; /* Add spacing */
+  }
+  

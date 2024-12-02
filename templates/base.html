@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plexi - Your go-to platform for help</title>
+    <link rel="icon" type="image/png" href="{{url_for('static', filename = 'Images/logo.png')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename=css_file) }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navigation Section -->
+    <header>
+        <a href="{{url_for('home')}}">
+            <img class="logo" height="50px" src="{{url_for('static', filename = 'Images/logo.png')}}" alt="Company Logo">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{url_for('home')}}">Home</a></li>
+    
+                <!-- Dropdown Menu -->
+                <li class="has-dropdown">
+                    <a href="#">Services</a>
+                    <ul class="dropdown">
+  
+                        <li class="dropdown-item">
+                            <a href="#">Home Maintenance</a>
+                            <ul class="submenu">
+                                <li><a href="#">Lawn Mowing</a></li>
+                                <li><a href="#">Roof Repair</a></li>
+                                <li><a href="#">Plumbing Repairs</a></li>
+                                <li><a href="#">Electrical Work</a></li>
+                                <li><a href="#">Gutter Cleaning</a></li>
+                                <li><a href="#">Window Cleaning</a></li>
+                                <li><a href="#">Pressure Washing</a></li>
+                            </ul>
+                        </li>
+  
+                        <li class="dropdown-item">
+                            <a href="#">Cleaning Services</a>
+                            <ul class="submenu">
+                                <li><a href="#">House Cleaning</a></li>
+                                <li><a href="#">Carpet Cleaning</a></li>
+                                <li><a href="#">Snow Shoveling</a></li>
+                            </ul>
+                        </li>
+  
+                        <li class="dropdown-item">
+                            <a href="#">Personal Services</a>
+                            <ul class="submenu">
+                                <li><a href="#">Babysitting</a></li>
+                                <li><a href="#">Pet Sitting or Dog Walking</a></li>
+                                <li><a href="#">Grocery Shopping</a></li>
+                                <li><a href="#">Tutoring</a></li>
+                            </ul>
+                        </li>
+    
+                        <li class="dropdown-item">
+                            <a href="#">Handyman Services</a>
+                            <ul class="submenu">
+                                <li><a href="#">Furniture Assembly</a></li>
+                                <li><a href="#">Painting and Decorating</a></li>
+                                <li><a href="#">Moving Help</a></li>
+                                <li><a href="#">Yard Work</a></li>
+                            </ul>
+                        </li>
+  
+                        <li class="dropdown-item">
+                            <a href="#">Vehicle Services</a>
+                            <ul class="submenu">
+                                <li><a href="#">Car Washing</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+  
+                <li><a href="#">How It Works</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+          {% if logStatusHolder %}  
+            <a class="cta" href="{{url_for('logout')}}"><button>{{ logStatusHolder }}</button></a>
+          {% else %}
+            <a class="cta" href="{{url_for('login')}}"><button>Signup/Login</button></a>
+          {% endif %}
+     </header>
+
+     <!--Menu Icons-->
+     <div class="menu-icon">
+        <span class="icon icon-bars"></span>
+     </div>
+     
+     
+
+     {% block content %}
+
+     {% endblock %}
+      <script src="{{url_for('static', filename = 'js/script.js')}}"></script>
+</body>
+</html>

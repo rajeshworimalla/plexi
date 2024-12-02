@@ -1,0 +1,220 @@
+
+ /* not search bar */
+ .page-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    margin-top:10px;
+    margin-bottom:20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* width: 100%; */
+  }
+
+  .page-location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #5b34eb;
+    font-weight: bold;
+  }
+
+  .page-location i {
+    color: #5b34eb;
+    font-size: 16px;
+  }
+
+  .page-search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    margin: 0 15px;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+  }
+
+  .filter-button, .find-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5b34eb;
+    color: white;
+    font-size: 14px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  .filter-button {
+    margin-right: 10px;
+  }
+
+  .filter-button i {
+    margin-right: 5px;
+  }
+
+  .find-button i {
+    margin-right: 5px;
+  }
+
+  .page-search-input::placeholder {
+    color: #aaa;
+  }
+  .suggestions-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom:20px;
+  }
+
+  .suggestions-container .title {
+    font-size: 16px;
+    color: #888;
+    margin-right: 10px;
+  }
+
+  .suggestions-container .tag {
+    padding: 10px 20px;
+    background-color: #f0eaff;
+    color: #5b34eb;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .suggestions-container .tag:hover {
+    background-color: #d7c7ff;
+  }
+
+  .suggestions-container .tag.active {
+    background-color: #5b34eb;
+    color: white;
+  }
+  .job-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* padding-left: 10px; */
+  }
+  .job-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+  }
+  .job-card h3 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .job-card h3 a{
+    text-decoration:none;
+    color:black; 
+  }
+  .job-card .salary {
+    color: #5b34eb;
+    margin-bottom: 10px;
+  }
+  .job-card .location {
+    font-size: 14px;
+    color: #555;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .page-button {
+    padding: 10px 15px;
+    background-color: #5b34eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .page-button:hover {
+    background-color: #4728c3;
+  }
+  
+  .pagination span {
+    font-size: 14px;
+    color: #555;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close-button:hover,
+  .close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .filter-label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+
+  .filter-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .apply-filters-button {
+    background-color: #5c37d7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .apply-filters-button:hover {
+    background-color: #4a2db3;
+  }
+  

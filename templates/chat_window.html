@@ -1,0 +1,55 @@
+{% extends "chat.html" %}
+{% block chatwindow %}
+<!-- Chat Window -->
+<main class="chat-window">
+    <header>
+        <h2>{{ chat_partner }}</h2>
+        <p>{{ chat_description }}</p>
+    </header>
+    <div class="chat-messages" id="chat-messages">
+        <!-- <div class="message sent">
+            <p>What is the loop of Creation? How is there something from nothing?</p>
+            <span class="time">02:43PM</span>
+        </div>
+        <div class="message received">
+            <p>Fact that it is impossible to prove that anything exists beyond perception.</p>
+            <span class="time">02:44PM</span>
+        </div> -->
+    </div>
+    <footer>
+        <input type="text" id="message-input" placeholder="Type a message">
+        <button id="send-message">Send</button>
+    </footer>
+</main>
+
+<script>
+    const chatId = {{ chat_id }};
+    const loadMessages = () => {
+        fetch(`/messages/${chatId}`)
+            .then(response => response.json())
+            .then(data => {
+                const messagesDiv = document.getElementById('chat-messages');
+                messagesDiv.innerHTML = '';
+                data.forEach(msg => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', msg.sender === '{{ user_name }}' ? 'sent' : 'received');
+                    messageDiv.innerHTML = `<p>${msg.message}</p><span class="time">${msg.timestamp}</span>`;
+                    messagesDiv.appendChild(messageDiv);
+                });
+            });
+    };
+    document.getElementById('send-message').addEventListener('click', () => {
+        const message = document.getElementById('message-input').value;
+        fetch('/send_message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: chatId, message: message })
+        }).then(() => {
+            document.getElementById('message-input').value = '';
+            loadMessages();
+        });
+    });
+    loadMessages();
+    setInterval(loadMessages, 3000); // Refresh every 3 seconds
+</script>
+{% endblock %}

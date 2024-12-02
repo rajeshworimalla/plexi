@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/portal-styles.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename = css_file)}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename = css_file2)}}" />
+  <link rel="icon" type="image/png" href="{{url_for('static', filename = 'Images/logo.png')}}" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <h1>Plexi</h1>
+    <ul>
+      <li><a href="{{url_for('dashboard')}}"><i class="fas fa-home"></i> Dashboard</a></li>
+      <li><a href="{{url_for('applications')}}"><i class="fas fa-briefcase"></i> Applications</a></li>
+      {% if user.user_role == 'requester'%}
+      <li><a href="{{url_for('tasks')}}"><i class="fas fa-search"></i> Recruitment </a></li>
+      {% endif %}
+      {% if user.user_role == 'admin'%}
+      <li><a href="{{url_for('users')}}"><i class="fas fa-user"></i> Users </a></li>
+      {% endif %}
+      
+      <li><a href="{{url_for('chats')}}"><i class="fas fa-envelope"></i> Inbox</a></li>
+      <li><a href="{{url_for('statistics')}}"><i class="fas fa-chart-pie"></i> Statistics</a></li>
+      <li><a href="{{url_for('settings')}}"><i class="fas fa-newspaper"></i> Settings</a></li>
+      <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt"></i>
+          Logout</a></li>
+    </ul>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="search-bar">
+      <i class="fas fa-bars menu-icon" id="menu-toggle"></i>
+      <span class="search-title">Search Jobs</span>
+      <form action="{{url_for('search_result')}}" method='POST'>
+        <input id="search-bar" type="text" name="tosearch" placeholder="Search something here...">
+      </form>
+     
+
+
+      <div class="icons">
+        <span>
+          <a href="{{url_for('chats')}}"><i class="fas fa-comments"></i></a>
+          <div class="badge">1</div>
+        </span>
+        
+      </div>
+      <div class="profile">
+        <img src="https://via.placeholder.com/40" alt="Profile">
+        <div class="info">
+          <div class="name">{{user.username}}</div>
+          <div class="role">{{user.user_role}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="loader"></div>
+    {%block content%}
+
+    {%endblock%}
+  </div>
+</body>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const content = document.querySelector('.content');
+
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('hidden');
+    content.classList.toggle('full');
+  });
+
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{url_for('static', filename=js_file)}}"></script>
+<script src="{{url_for('static', filename='js/loader.js')}}"></script>
+
+</html>

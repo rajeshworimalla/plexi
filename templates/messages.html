@@ -1,0 +1,59 @@
+{%extends "base-portal.html"%}
+{%block content%}
+<div class="chat-app">
+    <!-- Chat List -->
+    <aside class="chat-list">
+        <h3>My Chat List</h3>
+        <ul>
+            <li class="chat-item active">
+                <img src="https://via.placeholder.com/40" alt="User">
+                <div class="chat-info">
+                    <h4>Barbara Jones</h4>
+                    <p>Celestial bodies that capture</p>
+                    <span class="time">30 minutes</span>
+                </div>
+            </li>
+            <li class="chat-item">
+                <img src="https://via.placeholder.com/40" alt="User">
+                <div class="chat-info">
+                    <h4>Max Cobb</h4>
+                    <p>Celestial bodies that capture</p>
+                    <span class="time">12 minutes</span>
+                </div>
+            </li>
+            <li class="chat-item">
+                <img src="https://via.placeholder.com/40" alt="User">
+                <div class="chat-info">
+                    <h4>Charlie Perry</h4>
+                    <p>Celestial bodies that capture</p>
+                    <span class="time">45 minutes</span>
+                </div>
+            </li>
+            <!-- Add more chat items as needed -->
+        </ul>
+    </aside>
+
+    <!-- Chat Window -->
+    <main class="chat-window">
+        <header>
+            <h2>Barbara Jones</h2>
+            <p>Celestial bodies that capture</p>
+        </header>
+        <div class="chat-messages">
+            <div class="message sent">
+                <p>What is the loop of Creation? How is there something from nothing?</p>
+                <span class="time">02:43PM</span>
+            </div>
+            <div class="message received">
+                <p>Fact that it is impossible to prove that anything exists beyond perception.</p>
+                <span class="time">02:44PM</span>
+            </div>
+            <!-- Add more messages as needed -->
+        </div>
+        <footer>
+            <input type="text" placeholder="Message Barbara Jones">
+            <button>Send</button>
+        </footer>
+    </main>
+</div>
+{%endblock%}

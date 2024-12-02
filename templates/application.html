@@ -1,0 +1,49 @@
+{% extends "base-portal.html" %}
+
+{% block title %}Job Applications{% endblock %}
+
+{% block content %}
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date Applied</th>
+                <th>Company</th>
+                <th>Title</th>
+                <th>Contact</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for app in applications%}
+            <tr>
+                <td>#APL-{{app.application_id}}</td>
+                <td>{{app.date_applied}}</td>
+                <td class="company-logo">
+                    <img src="https://via.placeholder.com/30" alt="Logo">
+                    {{app.employer}}
+                </td>
+                <td>{{app.title}}</td>
+                <td class="contact-icons">
+                    <a href="tel:{{app.phone}}">📞</a>
+                    <a href="mailto:{{app.email}}">✉️</a>
+                </td>
+                <td><span class="status pending">{{app.app_status}}</span></td>
+                <td>
+                    <div class="actions">
+                        <button class="three-dots">⋮</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url_for('delete_application',app_id = app.application_id)}}">Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+</div>
+{% endblock %}

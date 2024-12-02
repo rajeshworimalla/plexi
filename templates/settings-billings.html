@@ -1,0 +1,86 @@
+{%extends "settings.html"%}
+
+{%block settingsContent%}
+
+<div class="container">
+    <h1>Payment Method</h1>
+    <p>Update your billing details and address.</p>
+
+    <div class="card-details">
+        <h2>Card Details</h2>
+        <form>
+            <div class="other-form-group">
+                <label for="card-name">Name on your Card</label>
+                <input type="text" id="card-name" placeholder="Mayad Ahmed">
+            </div>
+            <div class="other-form-group">
+                <label for="expiry">Expiry</label>
+                <input type="text" id="expiry" placeholder="02/2028">
+            </div>
+            <div class="other-form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="8269 9620 9292 2538" disabled>
+            </div>
+            <div class="other-form-group">
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" placeholder="•••">
+            </div>
+            <button type="button" class="add-card-btn">+ Add another card</button>
+        </form>
+    </div>
+
+    <div class="contact-email">
+        <h2>Contact Email</h2>
+        <p>Where should invoices be sent?</p>
+        <form>
+            <div class="radio-group">
+                <input type="radio" id="existing-email" name="email" checked>
+                <label for="existing-email">Send to the existing email (mayadahmed@ofspace.co)</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="new-email" name="email">
+                <label for="new-email">Add another email address</label>
+            </div>
+        </form>
+    </div>
+
+    <div class="billing-history">
+        <h2>Billing History</h2>
+        <p>See the transactions you made</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Invoice</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Tracking & Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Account Sale</td>
+                    <td>Apr 14, 2004</td>
+                    <td>$3,050</td>
+                    <td class="status pending">Pending</td>
+                    <td>LM58040557SCN</td>
+                </tr>
+                <tr>
+                    <td>Account Sale</td>
+                    <td>Jun 24, 2008</td>
+                    <td>$1,050</td>
+                    <td class="status cancelled">Cancelled</td>
+                    <td>AZ93854035US</td>
+                </tr>
+                <tr>
+                    <td>Netflix Subscription</td>
+                    <td>Feb 28, 2004</td>
+                    <td>$800</td>
+                    <td class="status refund">Refund</td>
+                    <td>S3531605504US</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,56 @@
+{% extends "settings.html" %}
+
+{% block settingsContent %}
+<div class="container">
+    <div class="icon-section">
+        <a href="tel:{{user.phone}}"><i class="fas fa-phone"></i></a>
+        <a href="mailto: {{user.email}}"><i class="fas fa-envelope"></i></a>
+        
+    </div>
+    <div class="profile-section">
+        <img src="{{url_for('static',filename= 'Images/images.jpeg')}}" alt="Profile Picture" class="profile-pic">
+        <h2>{{user.username}}</h2>
+        <h4>{{user.main_job}}</h4>
+        <p>
+            {{user.user_bio}}
+        </p>
+        <div class="skills">
+            <span>{{user.main_job}}</span>
+            
+        </div>
+        <!-- <div class="notes-section">
+            <h4>Add Notes</h4>
+            <textarea placeholder="Add notes for future reference"></textarea>
+            <button>Add Note</button>
+        </div> -->
+    </div>
+    <div class="details-section">
+        
+        <div class="basic-info">
+            <h4>Basic Information</h4>
+            <div class="info-grid">
+                <div>
+                    <p><b>Age:</b><br> {{user.user_age}} years</p>
+                    <p><b>Tasks completed:</b><br>{{user.task_completed}}</p>
+                    <p><b>Location:</b><br> {{user.location}}</p>
+                </div>
+                <div>
+                    <p><b>Phone:</b><br> {{user.phone}}</p>
+                    <p><b>Email:</b> <br>{{user.email}}</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button>Send Email</button>
+            </div>
+        </div>
+
+        <div class="experience">
+            <h4>Experience</h4>
+            <p><b>Infosys:</b> Apr 2018 - Present</p>
+            <p><b>Pixel Studio:</b> Oct 2016 - Jan 2018</p>
+            <p><b>Rameton Studio:</b> Apr 2015 - May 2016</p>
+        </div>
+      
+    </div>
+</div>
+{% endblock %}

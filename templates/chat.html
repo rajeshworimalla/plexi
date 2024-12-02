@@ -1,0 +1,34 @@
+{%extends "base-portal.html"%}
+{%block content%}
+<div class="chat-app">
+    <!-- Chat List -->
+    <aside class="chat-list">
+        <h3>My Chat List</h3>
+        <form id="start-chat-form" class="chat-search-bar" method="POST" action="{{url_for('start_chat')}}">
+            <input type="text" id="tosearch" name="tosearch" placeholder="Enter recipient's ID" required>
+            <button type="submit">Start Chat</button>
+        </form>      
+        {%if alert%}
+        <p style= "color:red">{{alert}}</p>
+        {%endif%}  
+        <ul>
+            {% for chat in chat_list %}
+            <li class="chat-item">
+                <a href="{{ url_for('chat_window', chat_id=chat['id']) }}">
+                    <img src="https://via.placeholder.com/40" alt="User">
+                    <div class="chat-info">
+                        <h4>{{ chat['username'] }}</h4>
+                        <p>{{ chat['last_message'] }}</p>
+                        <span class="time">{{ chat['last_message_time'] }}</span>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+            
+        </ul>
+    </aside>
+
+   {%block chatwindow%}
+   
+   {%endblock%}
+{%endblock%}

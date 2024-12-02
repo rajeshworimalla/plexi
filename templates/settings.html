@@ -1,0 +1,20 @@
+{% extends "base-portal.html" %}
+
+{% block content %}
+<div class="profile-settings">
+    <div class="navbar">
+        <a href="{{url_for('settings_details')}}">My details</a>
+        <a href="{{url_for('settings_profile')}}">Profile</a>
+        <a href="{{url_for('settings_password')}}">Password</a>
+        <!-- <a href="#">Team <span class="settings-badge">48</span></a> -->
+        <a href="{{url_for('settings_email')}}">Email</a>
+        <a href="{{url_for('settings_others')}}">Account</a>
+        <!-- <a href="{{url_for('settings_billings')}}">Billings</a> -->
+    </div>
+
+    {% block settingsContent %}
+
+    {% endblock %}
+</div>   
+
+{% endblock %}

@@ -1,0 +1,156 @@
+.tasks-container {
+    width: 100%;
+    margin: 20px auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question-card {
+    display: flex;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    gap: 15px;
+    font-size: 15px;
+}
+
+.votes {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.question-content {
+    flex: 1;
+}
+
+.question-content h3 {
+    margin: 0;
+    color: black;
+}
+
+.question-content p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.details {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.details span {
+    margin-right: 15px;
+}
+
+button {
+    background-color: #5c37d7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+
+}
+
+button:hover {
+    background-color: #5c37d7;
+}
+
+/* Container styles */
+.booking-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Status section */
+.status {
+    display: flex;
+    align-items: center;
+}
+
+.checkmark {
+    color: #00c851;
+    /* Green color */
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.status-text h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.status-text p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Button styles */
+.book-move-btn {
+    background-color: #5c37d7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button styles */
+.book-move-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.book-move-btn:hover {
+    background-color: #7a65be;
+}
+
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.pagination a {
+    color: #5c37d7;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #e0e0e0;
+}
+
+.pagination span {
+    font-size: 14px;
+    margin: 0 10px;
+    color: #555;
+}

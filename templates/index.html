@@ -1,0 +1,240 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+     <!-- Home Section -->
+     <section id="home" class="hero">
+        <div class="wrapper">
+            <div class="loading">
+                <h1 id="loading-message"></h1>
+            </div>
+            
+          <div class="hero-container">
+            <span>
+              <h1>Find help for everyday tasks.</h1>
+            </span>
+            <span>
+              <h3>Connecting people who needs help with who can provide it.</h3>
+            </span>
+            <div class = "button-container">
+            <a href="#" role="button" class="button">Post a job</a>
+            <a href="#" role="button" class="button">Find jobs</a>
+            </div>
+          </div>
+          <div class="right-side">
+            <img src="{{url_for('static', filename = 'Images/heroimg1.jpg')}}" alt="Image 1">
+            <img src="{{url_for('static', filename = 'Images/1.jpg')}}" alt="Image 2">
+            <img src="{{url_for('static', filename = 'Images/2.jpg')}}" alt="Image 3">
+            <img src="{{url_for('static', filename = 'Images/3.jpg')}}" alt="Image 4">
+            <img src="{{url_for('static', filename = 'Images/4.jpg')}}" alt="Image 5">
+            <img src="{{url_for('static', filename = 'Images/5.jpg')}}" alt="Image 6">
+          </div>
+        </div>
+      </section>
+<!-- How It Works Section -->
+<section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Your one-stop platform for connecting job providers with skilled taskers.</p>
+      </div>
+  
+      <div class="main-grid">
+        <!-- Job Providers -->
+        <div class="user-type">
+          <div class="user-type-header">
+            <div class="user-type-icon">
+              <img src="/Images/job-provider.png" alt="Job Provider Icon" />
+            </div>
+            <h2>For Job Providers</h2>
+          </div>
+          
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Post a Job</h3>
+                <p>Post a job for free, specify requirements and set your budget</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Select a Tasker</h3>
+                <p>Browse profiles, reviews, and previous tasks to choose the right person</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Secure Payment</h3>
+                <p>Payments are held until task completion, with review options available</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Job Seekers -->
+        <div class="user-type">
+          <div class="user-type-header">
+            <div class="user-type-icon">
+              <img src="/Images/job-seeker.png" alt="Job Seeker Icon" />
+            </div>
+            <h2>For Job Seekers</h2>
+          </div>
+          
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Search for Jobs</h3>
+                <p>Browse job requests and make counter offers</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Send Proposals</h3>
+                <p>Send proposals to job providers, showcasing your skills</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Complete Jobs</h3>
+                <p>Accept jobs and complete them to earn income</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Key Features Section -->
+      <div class="features-section">
+        <h2 class="section-heading">Key Features</h2>
+        <div class="card-wrapper">
+          <div class="feature-card">
+            <h3>Easy to Use</h3>
+            <p>Simple job posting and browsing interface</p>
+          </div>
+          <div class="feature-card">
+            <h3>Secure</h3>
+            <p>Safe payments and verified profiles</p>
+          </div>
+          <div class="feature-card">
+            <h3>Flexible</h3>
+            <p>Find or offer one-time or regular jobs</p>
+          </div>
+          <div class="feature-card">
+            <h3>Community</h3>
+            <p>Reliable users with reviews and ratings</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Mission and Vision Section -->
+      <div class="mission-section">
+        <h2 class="section-heading">Mission and Vision</h2>
+        <div class="card-wrapper">
+          <div class="mission-card">
+            <h3>Our Mission</h3>
+            <p>Simplify the process of finding and offering jobs, creating a reliable community built on trust and convenience.</p>
+          </div>
+          <div class="mission-card">
+            <h3>Our Vision</h3>
+            <p>Make everyday tasks more manageable for everyone, providing a solution that benefits both job providers and seekers.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Additional Information Section -->
+      <div class="additional-info">
+        <h2 class="section-heading">Additional Information</h2>
+        <div class="card-wrapper">
+          <div class="feature-card">
+            <h3>Ratings and Reviews</h3>
+            <p>Users can rate and review taskers after completing tasks. This feedback is valuable for others considering assigning tasks to them later on.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Secure Payment</h3>
+            <p>Payments are temporarily withheld until the task is completed to satisfaction, ensuring both parties are protected.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- About Section -->
+<section class="about-section">
+<div class="content-container">
+    <h1 class="title fade-in">About Us</h1>
+    
+    <div class="about-content fade-in">
+        <div class="content-grid">
+            <div class="text-content">
+                <p class="highlight-text">
+                    Plexi is more than just a platform; it's a community built on trust, convenience, and mutual benefit.
+                </p>
+                
+                <p>
+                    Our mission is to simplify the process of finding and offering jobs, making everyday tasks more manageable for everyone. Whether you need help with mowing the lawn, moving out, or tackling a renovation project, Plexi connects you with reliable taskers who can get the job done.
+                </p>
+                
+                <p>
+                    We believe in creating a space where job providers and seekers can come together, share their skills, and build lasting relationships. Our secure payment system ensures that both parties are protected, and our rating and review system helps maintain a high standard of service.
+                </p>
+                
+                <p>
+                    At Plexi, we are committed to making your life easier, one task at a time.
+                </p>
+            </div>
+            
+            <div class="image-container">
+                <img src="/Images/community.jpg" alt="Plexi Community" class="about-image" />
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div class="stat-number">100K+</div>
+                <div class="stat-label">Tasks Completed</div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}

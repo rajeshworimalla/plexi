@@ -1,0 +1,55 @@
+{% extends "base-portal.html"%}
+
+{%block content%}
+<div class="table-container">
+    <h1>User Information Table</h1>
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Bio</th>
+                <th>Main Job</th>
+                <th>Task Completed</th>
+                <th>Age</th>
+                <th>Location</th>
+                <th>Phone Number</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {%for user in app_users%}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.role}}</td>
+                <td>{{user.bio}}</td>
+                <td>{{user.main_role}}</td>
+                <td>{{user.task_completed}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.location}}</td>
+                <td>{{user.phone_number}}</td>
+                <td>{{user.created_at}}</td>
+                <td>
+                    <div class="actions">
+                        <button class="three-dots">⋮</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url_for('view_profile', user_id = user.id)}}">View</a></li>
+                            <li><a href="{{url_for('delete_profile', user_id = user.id)}}">Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            {%endfor%}
+
+        </tbody>
+    </table>
+</div>
+{%endblock%}

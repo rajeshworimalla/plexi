@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Plexi- Login to your account</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="{{url_for('home')}}">
+            <img class="logo" height="50px" src="{{url_for('static', filename='Images/logo.png')}}" alt="logo">
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{url_for('home')}}">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="{{url_for('login')}}"><button>Sign up/Login</button></a>
+    </header>
+    <div class="container">
+        <!-- Tabs for Login and SignUp -->
+        <div class="tabs">
+            <button class="tab active" data-tab="login">Login</button>
+            <button class="tab" data-tab="signup">Sign Up</button>
+        </div>
+
+        <!-- Forms Section -->
+        <div class="form-container">
+            <!-- Login Form -->
+            <form id="login" class="form active" action='/login' method='POST'>
+                <h2>Welcome Back</h2>
+                {% if login_alert %}
+                <p style="color: red ;">{{login_alert}}</p>
+                {% endif %}
+                <div class="input-group">
+                    <input type="email" id="login-email" placeholder="Email Address" name="email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="login-password" placeholder="Password" name="password" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember Me</label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="social-login">
+                    <button class="google">Login with Google</button>
+                    <button class="facebook">Login with Facebook</button>
+                </div>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup" class="form" action='/signup' method='POST'>
+                <h2>Create Account</h2>
+                {% if signup_alert %}
+                <p style="color: red;">{{signup_alert}}</p>
+                {% endif %}
+                <table>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <select id="role" name="role" required>
+                                    <option value="">Select Role</option>
+                                    <option value="user">Tasker</option>
+                                    <option value="admin">Requester</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <textarea id="bio" name="bio" placeholder="Write about yourself..." rows="3"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="main_job" name="main_job" placeholder="Main Job">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="number" id="age" name="age" placeholder="Age" min="1" max="100" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="location" name="location" placeholder="Location" required>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="email" id="signup-email" name="email" placeholder="Email Address" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="tel" id="phone-number" name="phone-number" placeholder="Phone Number" required>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="password" id="signup-password" name="password" placeholder="Password" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="input-group">
+                                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">I accept the terms and conditions</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit">Sign Up</button>
+            </form>
+            
+        </div>
+    </div>
+    <script src="{{url_for('static', filename = 'js/loginjs.js')}}"></script>
+</body>
+
+</html>

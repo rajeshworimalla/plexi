@@ -1,0 +1,33 @@
+{% extends "settings.html" %}
+
+{% block settingsContent %}
+<div class="container">
+    <h1>Account Security</h1>
+    <p>Set up security measures for better protection</p>
+
+    <div class="security-item">
+      <div class="info">
+        <p class="label">Switch Role</p>
+        <p class="value">Switch role from requester to tasker or vice versa</p>
+      </div>
+      <button class="action-btn"><a href="{{url_for('switch')}}">Swtich</a></button>
+    </div>
+
+    <div class="security-item">
+      <div class="info">
+        <p class="label">Deactivate Account</p>
+        <p class="description">Deactivates your account temporarily. Others will still be able to see you.</p>
+      </div>
+      <button class="action-btn">Deactivate</button>
+    </div>
+
+    <div class="security-item">
+      <div class="info">
+        <p class="value status enabled"><strong>Delete Account</strong></p>
+        <p class="value">Permanently deletes your account. All your information will be lost.</p>
+      </div>
+      <button class="action-btn">Confrim Deletion</button>
+    </div>
+  </div>
+
+{%endblock%}

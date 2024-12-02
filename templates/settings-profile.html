@@ -1,0 +1,54 @@
+{% extends "settings.html" %}
+
+{% block settingsContent%}
+<h1>Profile</h1>
+<p>Update your photo and personal details here.</p>
+
+<form class="settings-form" method = 'POST' action = '/settings-profile'>
+    <!-- Username Section -->
+    <div class="form-group">
+        <label for="username">Username</label>
+        <div class="input-group">
+            <span class="prefix">@</span>
+            <input type="text" id="username" name="username" value="{{user.username}}">
+        </div>
+    </div>
+
+    <!-- Website Section -->
+    <!-- <div class="form-group">
+        <label for="website">Website</label>
+        <input type="url" id="website" name="website" value="http://www.untitledui.com">
+    </div> -->
+
+    <!-- Photo Section -->
+    <!-- <div class="form-group photo">
+        <label>Your photo</label>
+        <div class="photo-container">
+            <img src="profile-photo.jpg" alt="Profile Photo">
+            <button type="button" class="update-photo">Update</button>
+        </div>
+    </div> -->
+
+    <!-- Bio Section -->
+    <div class="form-group">
+        <label for="bio">Your bio</label>
+        <textarea id="bio" name="bio" maxlength="275">
+            {{user.user_bio}}
+        </textarea>
+        <p class="char-count">275 characters left</p>
+    </div>
+
+    <!-- Job Title Section -->
+    <div class="form-group">
+        <label for="job-title">Main profession</label>
+        <input type="text" id="job-title" name="job-title" value="{{user.main_job}}">
+        <!-- <div class="checkbox-group">
+            <input type="checkbox" id="show-job-title" name="show-job-title" checked>
+            <label for="show-job-title">Show my job title in my profile</label>
+        </div> -->
+    </div>
+    <button type = "Submit" class="update-photo">Save Changes</button>
+</form>
+
+
+{% endblock %}

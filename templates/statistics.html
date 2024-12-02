@@ -1,0 +1,110 @@
+{% extends "base-portal.html" %}
+{% block content%}
+<div class="dashboard">
+  <!-- Stats Cards -->
+  <div class="stats">
+    <div class="card">
+      <h4>Pending</h4>
+      <h2>{{applications.pending}}</h2>
+      <div class="progress">
+        <div class="circle purple">
+          <p>{{applications.pending_percent}}%</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="card">
+      <h4>Accepted</h4>
+      <h2>{{applications.accepted}}</h2>
+      <div class="progress">
+        <div class="circle green">
+          <p>{{applications.accepted_percent}} %</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="card">
+      <h4>Rejected</h4>
+      <h2>{{applications.rejected}}</h2>
+      <div class="progress">
+        <div class="circle orange">
+          <p>{{applications.rejected_percent}} %</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Active Jobs & Total Applications -->
+  <div class="stats-content">
+    <div class="active-jobs-container">
+      <header>
+        <h4>Active Jobs</h4>
+        <button>View List</button>
+      </header>
+      <canvas id="barChart"></canvas>
+
+      <!-- Job Title Section Below the Chart -->
+      <!-- <div class="job-titles">
+            <h4>Job Title</h4>
+            <ul>
+                <li>Project Manager <span>325</span></li>
+                <li>Sales Manager <span>154</span></li>
+                <li>Machine Instrument <span>412</span></li>
+                <li>Operation Manager <span>412</span></li>
+            </ul>
+        </div> -->
+    </div>
+    <div class="inside-stats">
+      <div class="total-applications-card">
+        <h4>Total Applications</h4>
+        <div class="progress-bar">
+          <span class="applications" style="width:{{applications.pending_percent}}%;"></span>
+          <span class="shortlisted"
+            style="width:{{applications.accepted_percent}}%; left:{{applications.pending_percent}}%;"></span>
+          <span class="on-hold"
+            style="width:{{applications.reviewed_percent}}%; left:{{applications.pending_percent + applications.accepted_percent}}%;"></span>
+          <span class="rejected"
+            style="width:{{applications.rejected_percent}}%; left:{{applications.pending_percent + applications.accepted_percent + applications.reviewed_percent}}%;"></span>
+
+        </div>
+        <ul class="status-list">
+          <li>
+            <span class="dot applications-dot"></span> Pending <span>{{applications.pending}}</span>
+          </li>
+          <li>
+            <span class="dot shortlisted-dot"></span> Accepted <span>{{applications.accepted}}</span>
+          </li>
+          <li>
+            <span class="dot on-hold-dot"></span> Reviewed <span>{{applications.reviewed}}</span>
+          </li>
+          <li>
+            <span class="dot rejected-dot"></span> Rejected<span>{{applications.rejected}}</span>
+          </li>
+
+        </ul>
+      </div>
+      <div class="statistics-container">
+        <div class="statistics-header">
+          <h4>Statistics</h4>
+          <i class="fas fa-arrow-up-right"></i>
+        </div>
+        <div class="statistics-values">
+          <div class="statistics-value">
+            <span class="amount income">↑ $3,430</span>
+            <p>Income</p>
+          </div>
+          <div class="statistics-value">
+            <span class="amount expense">↓ $2,430</span>
+            <p>Expense</p>
+          </div>
+        </div>
+        <canvas id="statisticsChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+{% endblock %}

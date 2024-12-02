@@ -1,0 +1,67 @@
+{% extends "base-portal.html" %}
+{% block content %}
+
+<div id="filter-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Filter Jobs</h2>
+    <form method="POST" action="/filter_jobs">
+      <label class= "filter-label" for="location">Location:</label>
+      <input  class= "filter-input" type="text" name="location" id="location" placeholder="Enter a location" />
+
+      <label class= "filter-label" for="budget">Max-Budget:</label>
+      <input class= "filter-input" type="number" name="budget" id="budget" placeholder="Enter maximum budget" />
+
+      <button type="submit" class="apply-filters-button">Apply Filters</button>
+    </form>
+  </div>
+</div>
+
+<form method='POST' action='/search_for_jobs'>
+  <div class="page-search-container">
+    <div class="page-location">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Around You</span>
+    </div>
+    <input type="text" name="query" class="page-search-input" placeholder="Search by Title, Company or any jobs keyword..." />
+    <button class="filter-button" type="button" id="open-filter-modal">
+      <i class="fas fa-sliders-h"></i> FILTER
+    </button>
+    <button class="find-button" type="submit">
+      <i class="fas fa-search"></i> FIND
+    </button>
+  </div>
+</form>
+
+<div class="suggestions-container">
+  <span class="title">Suggestions</span>
+  <div class="tag">Kansas</div>
+  <div class="tag active">LA</div>
+  <div class="tag">New York</div>
+  <div class="tag">Texas</div>
+  <div class="tag">Florida</div>
+</div>
+<div class="job-cards">
+  {% for job in jobs %}
+  <div class="job-card">
+    <h3><a href="{{ url_for('view_job', job_id=job.0) }}">{{ job.1 }}</a></h3>
+    <div class="salary">${{ job.3 }}</div>
+    <p>{{ job.5 }}</p>
+    <div class="location">{{ job.4 }}</div>
+    <div class="remote-badge">{{job.10}}</div>
+  </div>
+  {% endfor %}
+</div>
+<div class="pagination">
+  {% if current_page > 1 %}
+  <a href="?page={{ current_page - 1 }}" class="page-button">Previous</a>
+  {% endif %}
+
+  <span>Page {{ current_page }} of {{ total_pages }}</span>
+
+  {% if current_page < total_pages %}
+  <a href="?page={{ current_page + 1 }}" class="page-button">Next</a>
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base-portal.html" %}
+{% block title %}Plexi - Create New Task{% endblock %}
+{% block content %}
+<div class="job-create-container">
+    <h1>Job Create</h1>
+
+    <!-- Step 1 -->
+    <form method = 'POST' action = '/create_task'>
+        <div class="step">
+            <h2>1/3 Let’s start with a strong title</h2>
+            <p>This help your job post stand out to the right applicants.</p>
+            <div class="form-group">
+                <label for="job-title">Write a title for your job post</label>
+                <input type="text" id="job-title" name="job-title" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="job-location">Where the job take place?</label>
+                <input type="text" id="job-location" name="job-location" placeholder="Location">
+            </div>
+
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+            <h2>2/3 What are the main descriptions required for your jobs?</h2>
+            <p>This help your job post stand out to the right applicants.</p>
+            <div class="form-group">
+                <input type="text" name  = "job-description" placeholder="Search or add up to 4 descriptions">
+            </div>
+
+        </div>
+
+        <!-- Step 3 -->
+        <div class="salary-container">
+            <h2>3/3 Final, about the job’s salary</h2>
+            <p>This will help us match the applicants within your range.</p>
+
+
+            <!-- Salary Range -->
+            <div class="salary-range">
+                <div class="input-group">
+                    <input type="number" name = "job-salary" min=5 id="salary-from" placeholder="USD" value="5">
+                    <span class="unit">USD</span>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="btn back-btn">Back</button>
+            <button type='submit' class="btn review-btn">Create Post</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{%extends "base-portal.html" %}
+
+{%block content%}
+<div class="job-list">
+    
+    {% for result in results%}
+    <div class="job-item">
+        <div class="job-logo" style="background-color: #1DB954;">S</div>
+        <div class="job-details">
+            <h3 class="job-title"><a href = "{{url_for('view_profile', user_id = result.id)}}"> {{result.username}} </a></h3>
+            <p class="company-name">{{result.mainjob}} • {{result.task_completed}} </p>
+            <p class="job-meta">
+                <span class="job-type">Full-time</span>
+                <span class="job-location">{{result.location}}</span>
+            </p>
+        </div>
+        <div class="job-save">🔖</div>
+    </div>
+    {%endfor%}
+    
+</div>
+
+{%endblock%}

@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+main {
+    max-width: 1000px; /* Increase the maximum width */
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px; /* Add more padding for a spacious layout */
+}
+
+/* Header */
+header h1 {
+    font-size: 2.5rem; /* Slightly larger font size */
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Form Section */
+.apply-form {
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Add gap for consistent spacing between fields */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 12px; /* Increase padding for better usability */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+textarea {
+    resize: none;
+    min-height: 100px; /* Ensure a reasonable default height */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Submit Button */
+button.submit-btn {
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 15px; /* Larger button size for easier interaction */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    main {
+        max-width: 90%; /* Reduce width for smaller screens */
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    button.submit-btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* File Input Styles */
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.custom-file-input label {
+    display: block;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-input label:hover {
+    background-color: #2980b9;
+}
+
+.file-name {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}

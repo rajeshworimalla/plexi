@@ -1,0 +1,41 @@
+{% extends "base-portal.html" %}
+
+{% block content %}
+
+<div class="tasks-container">
+    <div class="booking-container">
+        <div class="status">
+            <div class="status-text">
+                <h3>Create a New Request</h3>
+            </div>
+        </div>
+        <button class="book-move-btn"><a href="{{ url_for('create_task') }}">Create Now</a></button>
+    </div>
+    <h3>Your Recruitments</h3>
+    {% for job in user_jobs %}
+    <div class="question-card">
+        <div class="question-content">
+            <h3>{{ job.title }}</h3>
+            <p>{{ job.description }}</p>
+            <div class="details">
+                <span>14 answers</span>
+                <span>412 views</span>
+            </div>
+            <button><a href="{{ url_for('view_job', job_id = job.job_id) }}">View Details</a></button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+    {% if page > 1 %}
+    <a href="{{ url_for('tasks', page=page-1) }}" class="prev">Previous</a>
+    {% endif %}
+    <span>Page {{ page }} of {{ total_pages }}</span>
+    {% if page < total_pages %}
+    <a href="{{ url_for('tasks', page=page+1) }}" class="next">Next</a>
+    {% endif %}
+</div>
+
+{% endblock %}
