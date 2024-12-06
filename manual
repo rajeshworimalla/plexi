@@ -1,0 +1,228 @@
+#User Manual
+
+## Load the database
+
+### **Step 1: Start XAMPP and Open MySQL Admin**  
+1. Launch **XAMPP Control Panel** on your system.  
+2. Start the following services:
+   - **Apache**
+   - **MySQL**
+3. In the XAMPP Control Panel, click **Admin** next to **MySQL**. This will open **phpMyAdmin** in your default web browser.
+
+
+### **Step 2: Create a New Database**  
+1. In phpMyAdmin, click the **Databases** tab at the top.  
+2. In the "Create database" section:
+   - Enter `plexidb` (if you choose another name then please update config.py) in the database name field.  
+   - Select **utf8mb4_general_ci** as the collation (default setting).  
+   - Click **Create**.  
+
+
+### **Step 3: Import the Database Dump**  
+1. Once the database is created, click on the database name (`plexidb`) in the left sidebar to select it.  
+2. Navigate to the **Import** tab from the top menu.  
+3. Under "File to import":
+   - Click **Choose File** and navigate to the `backup` folder in the Plexi project directory.  
+   - Select the file `plexidbV2_final.sql`.  
+4. Scroll down and click the **Go** button.  
+5. Wait for the success message confirming that the database dump has been imported successfully.
+
+
+### **Step 4: Verify the Import**  
+1. Go to the **Structure** tab in phpMyAdmin to check the tables.  
+2. Ensure all the tables from the `plexidbV2_final.sql` file are present and match the expected schema.  
+
+
+
+### **Step 6: Run the Application**  
+1. Open your terminal or command prompt, navigate to the project directory, and start the Flask application:
+
+   python main.py
+
+2. Open your browser and go to [http://localhost:5000](http://localhost:5000) to verify that Plexi is connected to the database and running successfully.
+
+
+
+### Run `main.py` for Plexi  
+
+After setting up the database using XAMPP and connecting it via the `config.py` file(in case you imported the databse under different name), follow these steps to run the `main.py` file and launch the Plexi application:
+
+
+### **Step 1: Ensure Prerequisites Are Met**  
+Before running the application, confirm the following:
+- XAMPP’s **Apache** and **MySQL** services are running.
+- The database (`plexidb`) is properly imported and configured in the `config.py` file.
+- Python and Flask are installed on your system. If not, install Flask by running:
+  
+  pip install flask
+
+
+### **Step 2: Open the Terminal**  
+1. Navigate to the project directory where `main.py` is located. For example:
+
+   cd /path/to/Plexi
+ 
+
+### **Step 3: Run the Application**  
+1. Execute the `main.py` file by running:
+ 
+   python main.py
+  
+2. If Flask is properly set up, you will see an output indicating that the development server is running, such as:
+
+   * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ 
+If it shows you the link like above-mentioned example, then click on the link.
+
+
+### **Step 5: Verify the Application**  
+1. Test the key features such as login, task creation, and searching for tasks to ensure everything is functioning as expected.
+2. If there are any errors, check the terminal for logs to troubleshoot.
+
+
+### Troubleshooting Tips  
+- If Flask doesn't detect `main.py` as the entry point, try running:
+   flask run
+
+- Set the environment variable if needed:
+
+  set FLASK_APP=main.py  # For Windows
+  export FLASK_APP=main.py  # For macOS/Linux
+
+
+With these steps, Plexi should now be running locally and connected to the database.
+
+### Manual: How to Run Test Cases for Plexi  
+
+Testing ensures Plexi's features work as expected. Follow these steps to execute test cases and verify the system's functionality.
+
+
+### **Step 1: Ensure Prerequisites**
+Before running the tests:
+- Confirm that **pytest** is installed. If not, install it by running:
+
+ pip install pytest
+
+
+### **Step 2: Open the Terminal**
+1. Navigate to the Plexi project directory where the `test` folder is located:
+
+   cd /path/to/Plexi
+  
+
+### **Step 3: Run All Test Cases**
+1. Run all the test scripts in the `test` folder by executing:
+  
+   pytest
+
+2. This command will automatically discover and execute all test files prefixed with `test_` in the `test` folder.
+
+
+### **Step 4: Run a Specific Test File**
+To run a specific test file, provide the file name after the `pytest` command. For example:
+
+pytest test/test_userregistration.py
+
+This will execute only the test cases in `test_userregistration.py`.
+
+
+
+### **Step 5: View Test Results**
+1. Once the tests run, pytest will display a summary of the results:
+   - **Passed**: Tests that successfully validated the functionality.
+   - **Failed**: Tests that encountered issues.
+2. Example output:
+
+   ===================== test session starts =====================
+   collected 5 items
+
+   test_userregistration.py ....                                  [100%]
+
+   ==================== 5 passed in 0.50s ========================
+
+
+
+### **Step 6: Debug Failed Tests**
+1. If any test fails, pytest will provide detailed logs showing what went wrong.
+2. Open the failing test script and review the specific test case for issues.
+3. Fix any bugs in the application or adjust the test case as needed, then re-run the tests.
+
+
+### **Step 7: Clean Up**
+After running tests:
+- Reset the database if test data was added during execution.
+- Ensure the application is back in its pre-testing state by clearing any dummy data.
+
+
+
+Sometimes issue arises, like  **ModuleNotFoundError** or **ImportError**, while running tests.
+
+Solution:
+Verify that the PYTHONPATH includes your project directory. You can set it like this:
+
+SETPYTHONPATH=.
+
+
+### Running Locust Testing for Plexi  
+
+Please follow these steps to run Locust and perform load testing on Plexi application.
+
+### **Step 1: Ensure Prerequisites Are Met**  
+1. Confirm that Locust is installed by running:
+
+   locust --version
+
+   If it’s not installed, install it using:
+  
+   pip install locust
+
+
+2. Ensure that XAMPP is running and both Apache and MySQL services are active.  Plexi application must also be running (via `main.py`) for Locust to interact with it.
+
+### **Step 2: Start Locust**  
+1. Open a terminal and navigate to the directory containing the locust file. In PLexi's case, it is test_loadTesting.py inside the test folder. 
+
+  
+   cd /path/to/project
+  
+
+2. Start Locust by running:
+  
+locust -f test_loadTesting.py
+
+### **Step 3: Open Locust Web Interface**  
+1. After running the command, Locust will output a message like this:
+   
+   [2024-12-06 15:42:00,000] INFO/locust.main: Starting Locust 2.x.x
+   Web UI available at http://localhost:8089
+   
+2. Navigate to [http://localhost:8089](http://localhost:8089) to access the Locust web interface.
+
+
+### **Step 4: Configure Test Parameters**  
+1. In the Locust web interface, configure the following settings:
+   - **Number of users to simulate**: Enter the number of virtual users you want to simulate.
+   - **Spawn rate**: Enter how many users to add per second.
+   - **Host**: Set the host URL for your application (e.g., `http://localhost:5000`).
+
+2. Click **Start Swarming** to begin the test.
+
+
+### **Step 5: Monitor Test Results**  
+Once the test starts, Locust will provide real-time metrics in the web interface:
+- **Number of requests**: Displays the total number of requests made by virtual users.
+- **Response time**: Shows the median, average, and percentile response times.
+- **Requests per second (RPS)**: Tracks the number of requests handled by the server per second.
+- **Failures**: Indicates failed requests due to errors or timeouts.
+
+
+
+### **Step 6: Analyze the Results**  
+1. Use the **Statistics** tab to review performance metrics, such as average response time and failure rates.
+2. Switch to the **Charts** tab to visualize response times, request rates, and user counts over time.
+3. If any failures occur, review the **Failures** tab to identify the endpoints or requests causing issues.
+
+
+### **Step 7: Stop Testing**  
+When testing is complete, click **Stop Swarming** in the Locust web interface. You can also stop the Locust process in the terminal by pressing `CTRL+C`.
+

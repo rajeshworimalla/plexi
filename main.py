@@ -666,9 +666,5 @@ def delete_user():
     else:
         return "Email is required", 400
 
-
-    
-
-
 if __name__ == "__main__":
     app.run(debug=True)
